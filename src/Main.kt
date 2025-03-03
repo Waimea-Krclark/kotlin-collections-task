@@ -142,7 +142,7 @@ fun getNewMonkey(monkeyList: MutableList<String>) {
  */
 fun monkeyCounter(monkeyList: List<String>): String {
     // return the number of monkeys in the list
-    var message: String = ""
+    val message: String
     if (monkeyList.size > 0) {
         message = "There are ${monkeyList.size} monkeys!"
     } else {
@@ -157,7 +157,12 @@ fun monkeyCounter(monkeyList: List<String>): String {
  */
 fun longestMonkeyName(monkeyList: List<String>): String {
     // Loop through the list and find the longest name
-    return monkeyList.maxBy { it -> it.length }
+    if (monkeyList.size > 0) {
+        return monkeyList.maxBy { it -> it.length }
+    } else {
+        return "N/A"
+    }
+
 }
 
 
